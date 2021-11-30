@@ -1,6 +1,6 @@
 VERSION_FILE := ./VERSION
 TAG := $(shell cat ${VERSION_FILE})
-DOCKER_GID := $(shell getent group docker | awk -F: '{printf "%d", $3}')
+DOCKER_GID := $(shell getent group docker | awk -F: '{printf "%d", $$3}')
 SERVICE := 'jenkins'
 
 pre-run:
